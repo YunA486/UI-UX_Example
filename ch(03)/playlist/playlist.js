@@ -3,6 +3,7 @@
 window.onload = init;
 
 function init() {
+	// 사용자가 ‘곡추가’ 버튼 클릭하는 것을 처리하는 핸들러 설정
 	var button = document.getElementById("addButton");
 	button.onclick = handleButtonClick;
 
