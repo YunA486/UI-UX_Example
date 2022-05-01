@@ -1,0 +1,48 @@
+<html>
+
+<head>
+	<title>기온</title>
+	<meta charset="utf-8">
+	<script>
+		window.onload = showTemps;
+
+		function showTemps() {
+			var tempByHour = new Array();
+			// 배열 객체 생성
+			tempByHour[0] = 59.2;
+			tempByHour[1] = 60.1;
+			tempByHour[2] = 63;
+			tempByHour[3] = 65;
+			tempByHour[4] = 62;
+			for (var i = 0; i < tempByHour.length; i++) {
+				var theTemp = tempByHour[i];
+
+				var id = "temp" + i; //id=temp0 ~ id=temp4
+				var li = document.getElementById(id);
+				// <li>에 있는 아이디를 가져오기 위한 작업
+
+				if (i == 0) {
+					li.innerHTML = "정오의 기온은 " + theTemp +
+						"도였습니다.";
+					// temp0만 정오
+				} else {
+					li.innerHTML = "오후 " + i + "시의 기온은 " +
+						theTemp + "도였습니다.";
+				}
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<h1>기온</h1>
+	<ul>
+		<li id="temp0"></li>
+		<li id="temp1"></li>
+		<li id="temp2"></li>
+		<li id="temp3"></li>
+		<li id="temp4"></li>
+	</ul>
+</body>
+
+</html>
