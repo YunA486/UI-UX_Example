@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+  <h1>The Storage clear() Method</h1>
+
+  <p>This example demonstrates how to use the clear() method to delete all the local storage items for this domain.</p>
+
+  <h2>Missing localStorage items?</h2>
+
+  <p>Since you might not have any items stored in your local storage, we have added a script that creates some for you.
+  </p>
+
+  <button onclick="createItems()">Create local storage items</button>
+
+  <h2>Remove Items</h2>
+
+  <p>Click the button to delete the items:</p>
+
+  <button onclick="deleteItems()">Delete items</button>
+
+  <h2>Display Items</h2>
+
+  <p>Click the button to display all items:</p>
+
+  <button onclick="displayItems()">Display items</button>
+
+  <p id="demo"></p>
+
+  <script>
+    function createItems() {
+      localStorage.setItem("mytime", Date.now());
+      // 1970년 1월 1일 0시 0분 0초부터 현재까지, 60분에는 2ms
+      localStorage.setItem("myname", "John");
+      // myname이라는 키이름, John이라는 키값
+      localStorage.setItem("myage", 36);
+      // myage라는 키이름, 36이라는 키값
+    }
+
+    function deleteItems() {
+      localStorage.clear();
+      // localStorage 전체 삭제
+    }
+
+    function displayItems() {
+      var l, i;
+      document.getElementById("demo").innerHTML = "";
+      for (i = 0; i < localStorage.length; i++) {
+        x = localStorage.key(i);
+        // 키 네임 보여줌
+        document.getElementById("demo").innerHTML += x + "<br>";
+      }
+    }
+  </script>
+
+</body>
+
+</html>
