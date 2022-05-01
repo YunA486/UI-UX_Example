@@ -32,11 +32,5 @@ function handleButtonClick(e) {
 //추가1
 function handleButtonClick1(e) {
 	removeAll();
-}
-
-function removeAll() {
-	if (confirm('모두 지울까요?')) {
-		localStorage.clear();
-		// 전체 삭제
-	}
+	// playlist_store.js에 있는 removeAll함수
 }

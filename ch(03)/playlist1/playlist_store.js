@@ -29,12 +29,16 @@ function getStoreArray(key) {
 	var playlistArray = localStorage.getItem(key);
 	if (playlistArray == null || playlistArray == "") {
 		playlistArray = new Array();
-	}
-	else {
+	} else {
 		playlistArray = JSON.parse(playlistArray);
 	}
 	return playlistArray;
 }
 
-	//추가1
-
+//추가1
+function removeAll() {
+	if (confirm('모두 지울까요?')) {
+		localStorage.clear();
+		// 전체 삭제
+	}
+}
