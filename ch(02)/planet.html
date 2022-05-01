@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <title>행성</title>
+    <meta charset="utf-8">
+
+    <!-- <script>
+        var planet = document.getElementById("greenplanet");
+        //id 가 greenplanet인 p 요소를 가져다가 그내용을 변경
+        planet.innerHTML = "적색경보: 광선총에 맞았음!";
+    </script> -->
+    <!-- 
+        변화 없음 
+        - 페이지가 완전회 로드 되지 않았다면 JavaScript 코드가 실행될 때 아직 DOM 역시 완전하게 생성되지 않음
+        - 브라우저 실행 시 head 부분을 로드하면서 JavaScript 코드 실행
+        - 하지만 아직 greenplanet는 생성되지 않았기 때문에 바뀌지 않음
+    -->
+
+    <script>
+        window.onload = init;
+        // 페이지가 완전히 로드된 다음에 init 함수내의 코드를 실행하라고 알림
+        function init() {
+            var planet = document.getElementById("greenplanet");
+            // id가 greenplanet인 <p> 요소를 가져다가 그 내용을 변경
+            planet.innerHTML = "적색경보 광선총에 맞았음!";
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>녹색 행성</h1>
+    <p id="greenplanet">모든 것이 순조로움</p>
+    <h1>붉은 행성</h1>
+    <p id="redplanet">이상 무</p>
+    <h1>푸른 행성</h1>
+    <p id="blueplanet">전 시스템 완벽함</p>
+</body>
+
+
+
+</html>
